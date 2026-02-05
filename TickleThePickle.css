@@ -1,0 +1,22 @@
+body {
+  background: black;
+  color: #00ff66;
+  font-family: monospace;
+  text-align: center;
+}
+
+h1 {
+  margin-bottom: 10px;
+}
+
+canvas {
+  background: #111;
+  border: 3px solid #00ff66;
+  display: block;
+  margin: 0 auto;
+}
+
+.instructions {
+  margin-top: 10px;
+  font-size: 14px;
+}
