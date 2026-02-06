@@ -1,5 +1,8 @@
 const canvas = document.getElementById("gameCanvas");
 const ctx = canvas.getContext("2d");
+const startScreen = document.getElementById("startScreen");
+
+let gameStarted = false;
 
 // ======================
 // GAME STATE
@@ -8,7 +11,7 @@ let score = 0;
 let lives = 3;
 let gameOver = false;
 let fireCooldown = 0;
-let fireRate = 20; // lower = faster
+let fireRate = 20;
 let damage = 1;
 
 // ======================
@@ -29,9 +32,8 @@ const keys = {};
 document.addEventListener("keydown", e => {
   keys[e.key.toLowerCase()] = true;
 
-  if (e.key.toLowerCase() === "q") {
-    gameOver = true;
-  }
+  if (e.code === "Space") e.preventDefault();
+  if (e.key.toLowerCase() === "q") gameOver = true;
 });
 
 document.addEventListener("keyup", e => {
@@ -45,7 +47,7 @@ const bullets = [];
 const enemyBullets = [];
 
 // ======================
-// ENEMIES (PICKLES)
+// ENEMIES
 // ======================
 let enemies = [];
 let wave = 1;
@@ -70,19 +72,25 @@ function spawnWave() {
   }
 }
 
-spawnWave();
+// ======================
+// START GAME
+// ======================
+startScreen.addEventListener("click", () => {
+  startScreen.style.display = "none";
+  gameStarted = true;
+  spawnWave();
+  loop();
+});
 
 // ======================
 // GAME LOOP
 // ======================
 function update() {
-  if (gameOver) return;
+  if (!gameStarted || gameOver) return;
 
-  // Player movement
   if (keys["a"] && player.x > 0) player.x -= player.speed;
   if (keys["d"] && player.x < canvas.width - player.width) player.x += player.speed;
 
-  // Shooting (rate-limited)
   if (keys[" "] && fireCooldown <= 0) {
     bullets.push({
       x: player.x + player.width / 2 - 2,
@@ -95,17 +103,9 @@ function update() {
 
   fireCooldown--;
 
-  // Upgrade
-  if (keys["p"] && score >= 100) {
-    fireRate = Math.max(5, fireRate - 5);
-    score -= 100;
-  }
-
-  // Update bullets
   bullets.forEach(b => (b.y -= 10));
   enemyBullets.forEach(b => (b.y += 6));
 
-  // Enemy movement & shooting
   enemies.forEach(e => {
     e.x += e.dx;
     if (Math.random() < 0.002 * wave) {
@@ -118,7 +118,6 @@ function update() {
     }
   });
 
-  // Bounce enemies
   if (enemies.some(e => e.x < 0 || e.x > canvas.width - e.width)) {
     enemies.forEach(e => {
       e.dx *= -1;
@@ -126,7 +125,6 @@ function update() {
     });
   }
 
-  // Collisions
   bullets.forEach((b, bi) => {
     enemies.forEach((e, ei) => {
       if (hit(b, e)) {
@@ -145,13 +143,6 @@ function update() {
     }
   });
 
-  enemies.forEach(e => {
-    if (hit(e, player)) {
-      gameOver = true;
-    }
-  });
-
-  // Next wave
   if (enemies.length === 0) {
     wave++;
     spawnWave();
@@ -167,28 +158,21 @@ function hit(a, b) {
   );
 }
 
-// ======================
-// DRAW
-// ======================
 function draw() {
   ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-  // Player
   ctx.fillStyle = "#00ff66";
   ctx.fillRect(player.x, player.y, player.width, player.height);
 
-  // Bullets
   ctx.fillStyle = "yellow";
   bullets.forEach(b => ctx.fillRect(b.x, b.y, b.width, b.height));
 
   ctx.fillStyle = "red";
   enemyBullets.forEach(b => ctx.fillRect(b.x, b.y, b.width, b.height));
 
-  // Enemies
   ctx.fillStyle = "#00aa00";
   enemies.forEach(e => ctx.fillRect(e.x, e.y, e.width, e.height));
 
-  // UI
   ctx.fillStyle = "#00ff66";
   ctx.fillText(`Score: ${score}`, 10, 20);
   ctx.fillText(`Lives: ${lives}`, 10, 40);
@@ -196,17 +180,12 @@ function draw() {
 
   if (gameOver) {
     ctx.font = "40px monospace";
-    ctx.fillText("GAME OVER", 180, 400);
+    ctx.fillText("GAME OVER", 170, 400);
   }
 }
 
-// ======================
-// LOOP
-// ======================
 function loop() {
   update();
   draw();
   requestAnimationFrame(loop);
 }
-
-loop();
