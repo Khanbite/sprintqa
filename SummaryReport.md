@@ -23,9 +23,11 @@ Key Finding: [One sentence summary — e.g., "The core game loop works, but inpu
 - Complex scenarios & sequences ✓
 ### Coverage Summary
 #### Features Tested: 
-- Feature 1: 100% tested
-- Feature 2: 80% tested
-- Feature 3: Not tested (reason)
+- Shooting Upward
+- Special Key for Upgrade
+- Enemy Movement Pattern
+- Player Movement
+- Live Score System
 #### Test Types:
 - Functional testing (does it work?)
 - Negative testing (what breaks it?)
