@@ -172,7 +172,7 @@ Quint
 - Notes:
 
 ## Questions for Dev Team (If Applicable)
-###If there were ambiguities in how the game should work, note them here so dev team can clarify in Week 7:
+### If there were ambiguities in how the game should work, note them here so dev team can clarify in Week 7:
 
 - [Question about mechanic X]
 - [Unclear behavior in feature Y]
