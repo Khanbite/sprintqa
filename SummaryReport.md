@@ -36,10 +36,10 @@ Key Finding: [One sentence summary — e.g., "The core game loop works, but inpu
 ## Bug Summary
 ### By Severity
 - Critical: [#] bugs (game-breaking)
-- High: [#] bugs (core features broken)
-- Medium: [#] bugs (partial functionality issues)
-- Low: [#] bugs (cosmetic or minor edge cases)
-##### Total Bugs Filed: [#]
+- High: 3 bugs (core features broken)
+- Medium: 1 bugs (partial functionality issues)
+- Low: 2 bugs (cosmetic or minor edge cases)
+##### Total Bugs Filed: 9
 
 By Category
 Input Validation: [#] bugs
@@ -51,52 +51,60 @@ Other: [#] bugs
 ## Critical Issues (Must Fix Before Handoff)
 #### These bugs prevent the game from being playable or break core mechanics.
 
-Issue 1
+### Issue 1
 
-[Title]
+Ending screen after boss fight is not visible with the natural browser zoom of the game
 
-Critical
+Low Serverity and Priority
 
-[Brief steps]
+### Steps to Reproduce
+- Open game on Chrome web browser
+- Click to start game
+- Beat all 3 waves of pickles and defeat boss
+- Zoom out using "ctrl" + "-"
+- Observe the ending score and screen are hidden
 
-[Link]
+[[Link]](https://github.com/Khanbite/sprintqa/issues/2)
 
-Issue 2
+### Issue 2
 
-[Title]
+Pickle Soldiers and Vampire images are not fully transparent even with clipart image 
 
-Critical
+Low Serverity and Priority
 
-[Brief steps]
+### Steps to Reproduce
+- Open game on Chrome web browser
+- Click to start game
+- Observe the vampire and pickle soldiers are not fully transparent
 
-[Link]
+[[Link]](https://github.com/Khanbite/sprintqa/issues/3)
 
 High-Priority Issues (Fix ASAP)
 These bugs affect core features but don't prevent gameplay.
 
-Bug Level 1
+### Bug 1
 
-[Title]
-
-High
-
-[Link]
-
-Bug Level 2
-
-[Title]
+Pickle Soldiers do not hurt you when they collide with the player
 
 High
 
-[Link]
+[[Link]](https://github.com/Khanbite/sprintqa/issues/5)
 
-Bug Level 3
+### Bug 2
 
-[Title]
+Game does not end when the pickles get to the bottom of the screen 
 
 High
 
-[Link]
+[[Link]](https://github.com/Khanbite/sprintqa/issues/6)
+
+### Bug 3
+
+Players cannot move up/down
+
+High
+
+[[Link]](https://github.com/Khanbite/sprintqa/issues/7)
 
 ## Medium & Low Priority Issues
 ### Documented in GitHub Issues. These can be deferred or fixed in sequence.
