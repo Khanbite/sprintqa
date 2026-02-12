@@ -1,189 +1,232 @@
-QA Summary Report
-Game Tested: Tickle the Pickle
+# QA Summary Report
 
-Dev Team:(https://github.com/alexkurcan/Sprint-1)
+## Game Tested: Tickle the Pickle
 
-QA Team: Nayan, Quint, Kahni, Gauhar
+## Dev Team: Echo of Terminal 7
 
-Testing Period: Week 6 (Tue–Fri)
+## QA Team: Khani, Quint, Nayan, Gauhar
 
-Report Date: 2/13/26
+## Testing Period: Week 6 (Tue–Fri)
 
-Executive Summary
-We conducted comprehensive QA testing on Tickle the Pickle over 4 days. Our team tested [X core features], ran [Y test scenarios], and filed [Z GitHub Issues] documenting bugs across all severity levels.
+## Report Date: 2/13/
 
-Key Finding: [One sentence summary — e.g., "The core game loop works, but input validation needs attention."]
+# Executive Summary
 
-## Testing Overview
-### What We Tested
+We conducted comprehensive QA testing on Tickle the Pickle over 4 days. Our team tested 5
+core features, ran 20+ test scenarios, and filed 9 GitHub Issues documenting bugs across all
+severity levels.
+
+**Key Finding:** The core game works, but input validation, state management, and feature
+
+## implementation needs work.
+
+# Testing Overview
+
+# What We Tested
+
 - Happy path (normal gameplay) ✓
 - Input validation & edge cases ✓
 - Win/lose conditions ✓
 - State management ✓
 - Complex scenarios & sequences ✓
-### Coverage Summary
-#### Features Tested: 
-- Shooting Upward
-- Special Key for Upgrade
-- Enemy Movement Pattern
-- Player Movement
-- Live Score System
-#### Test Types:
-- Functional testing (does it work?)
-- Negative testing (what breaks it?)
-- Boundary testing (edge values)
-- Exploratory testing (creative scenarios)
-## Bug Summary
-### By Severity
-- Critical: [#] bugs (game-breaking)
-- High: 3 bugs (core features broken)
-- Medium: 1 bugs (partial functionality issues)
-- Low: 2 bugs (cosmetic or minor edge cases)
-##### Total Bugs Filed: 9
 
-By Category
-Input Validation: [#] bugs
-Logic Errors: [#] bugs
-State Management: [#] bugs
-UI/UX Issues: [#] bugs
-Other: [#] bugs
+# Coverage Summary
 
-## Critical Issues (Must Fix Before Handoff)
-#### These bugs prevent the game from being playable or break core mechanics.
+- **Features Tested:** [List core features and % coverage]
+    o Core gameplay loop: 100% tested
+    o Boss fight mechanics: 100 % tested
+    o Player controls and inputs: 95%
+    o Upgrade System: 95%
+    o Game State: 95%
+- **Test Types:** [Types of testing we did]
+    o Functional testing (does it work?)
+    o Negative testing (what breaks it?)
+    o Boundary testing (edge values)
 
-### Issue 1
 
-Ending screen after boss fight is not visible with the natural browser zoom of the game
+```
+o Exploratory testing (creative scenarios)
+```
+# Bug Summary
 
-Low Serverity and Priority
+# By Severity
 
-### Steps to Reproduce
-- Open game on Chrome web browser
-- Click to start game
-- Beat all 3 waves of pickles and defeat boss
-- Zoom out using "ctrl" + "-"
-- Observe the ending score and screen are hidden
+- **Critical:** 0 bugs (game-breaking)
+- **High:** 5 bugs (core features broken)
+- **Medium:** 1 bug (partial functionality issues)
+- **Low:** 3 bugs (cosmetic or minor edge cases)
 
-[[Link]](https://github.com/Khanbite/sprintqa/issues/2)
+## Total Bugs Filed: 9
 
-### Issue 2
+# By Category
 
-Pickle Soldiers and Vampire images are not fully transparent even with clipart image 
+- **Input Validation: 2** bugs
+- **Logic Errors:** 3 bugs
+- **State Management:** 1 bug
+- **UI/UX Issues:** 2 bugs
+- **Other:** 1 bug
 
-Low Serverity and Priority
+# High-Priority Issues (Fix ASAP)
 
-### Steps to Reproduce
-- Open game on Chrome web browser
-- Click to start game
-- Observe the vampire and pickle soldiers are not fully transparent
+## These bugs affect core features but don't prevent gameplay.
 
-[[Link]](https://github.com/Khanbite/sprintqa/issues/3)
+## # Title Severity GitHub Issue
 
-High-Priority Issues (Fix ASAP)
-These bugs affect core features but don't prevent gameplay.
+## 1
 
-### Bug 1
+```
+No screen
+displaying that
+you cannot
+upgrade with
+the incorrect
+amount of
+```
+## points
 
-Pickle Soldiers do not hurt you when they collide with the player
+## High https://github.com/Khanbite/sprintqa/issues/
 
-High
+## 2
 
-[[Link]](https://github.com/Khanbite/sprintqa/issues/5)
+```
+Upgrade ‘p’
+does not
+increase
+damage/fire
+more
+```
+## projectiles
 
-### Bug 2
+## High https://github.com/Khanbite/sprintqa/issues/
 
-Game does not end when the pickles get to the bottom of the screen 
 
-High
+# Medium & Low Priority Issues
 
-[[Link]](https://github.com/Khanbite/sprintqa/issues/6)
+Documented in GitHub Issues. These include things like transparency issues and missing
+feedback for insufficient points needed for upgrade.
 
-### Bug 3
+# Testing Insights
 
-Players cannot move up/down
+# What Worked Well
 
-High
+- Pause and reset
+- Core gameplay loop
+- README fairly informational
+- Testing was straightforward
 
-[[Link]](https://github.com/Khanbite/sprintqa/issues/7)
+# Areas for Improvement
 
-## Medium & Low Priority Issues
-### Documented in GitHub Issues. These can be deferred or fixed in sequence.
+- Input validation was weak
+- Some features mentioned in README not included
+- Game Over screen not clearly there
 
-## Testing Insights
-## What Worked Well
-- [Feature X performed as expected]
-- [Code quality made testing easier]
-- [Clear documentation helped understanding]
-## Areas for Improvement
-- [Input validation is weak]
-- [State management has logic errors]
-- [Error messages are unclear]
-## Patterns Noticed
-### [Did bugs cluster in certain areas? Did specific input types break the game?]
+# Patterns Noticed
 
-## Recommendations for Dev Team
-### Critical Fixes (Priority 1)
-- Fix [Issue X] — affects [feature]
-- Fix [Issue Y] — prevents [win/lose condition]
-## Important Fixes (Priority 2)
-- Improve input validation in [feature]
-- Fix state tracking in [feature]
-## Polish/Optional Fixes (Priority 3)
-- [Cosmetic improvements]
-- [Nice-to-have enhancements]
-## Test Environment
-- Platform: Python terminal
+## Many of the bugs are logic and input validation bugs.
 
-- Game Version: [Commit hash or date]
+# Recommendations for Dev Team
 
-- Testing Tools: Manual testing + GitHub Issues
+# Critical Fixes (Priority 1)
 
-## All GitHub Issues
-### Complete list of filed bugs: See dev team repo for all open GitHub Issues tagged qa-week6
+1. Fix Pickles Not Ending the game when at the bottom of the screen — Soft locks the
+    game, impossible to lose/win.
 
-- Total: [#] issues
+# Important Fixes (Priority 2)
 
-- Closed: [#] (if dev team fixed any during testing)
+1. Allow Arrow Keys to move
+2. Allow user to reset whilst playing
+3. More detailed README (Include Information on Boss Fight, don’t include any features
+    not in the game, explain that p is for upgrading instead of just “special key”, add info on
+    esc to pause, etc.)
+4. Allow user to quit.
 
-- Open: [#] (for dev team to fix in Week 7)
+# Polish/Optional Fixes (Priority 3)
 
-## Conclusion
-- [Summary of testing effort and findings. One paragraph.]
+1. Be able to continue the game after beating the boss. Boss fight at every 4th interval.
+2. Boss Fight Improved Difficult (Health is fine, make it Fire Lasers significantly faster)
+3. Sprites more visible/transparent.
+4. Upgrade Key at S key instead of P key for easier click.
+5. Total Score (Without taking upgrades into account) counter.
 
-- The game has [#] documented issues ranging from critical to cosmetic. With focused effort on critical bugs, the core gameplay loop is playable. Input validation and state management are the areas needing most attention.
 
-## QA Team Sign-Off
-#### Test Lead: 
-[Name]
+6. Difficulty options or some way to increase/decrease lives.
+7. Time after getting hit when player is temporarily invulnerable to prevent hit chains. (?)
+8. Making it clear when a hit is taken (flashing red/white)
+8.9. Fire Something Instead of Lasers (?)
+9.10. More Enemy Types (?)
 
-#### Submitted: 
-[Date/Time]
+# Test Environment
 
-#### Team Members:
+**Platform:** Python terminal / GitHub webpage
 
-Nayan
-Khnai
-Gauhar
+**Game Version:** 2/9/
+
+## Testing Tools: Manual testing + GitHub Issues
+
+# All GitHub Issues
+
+## Complete list of filed bugs: See dev team repo for all open GitHub Issues
+
+**Total:** 9 issues
+
+## Closed: 0
+
+## Open: 9
+
+# Conclusion
+
+Testing has revealed that while the basic gameplay loop is functional, there are several high
+severity logic and state management bugs preventing the game from being realized.
+Approximately 9 issues were documented ranging from high to low/cosmetic. With focused
+effort on high priority bugs, the game can become playable. Input validation and incomplete
+
+## features require the most attention.
+
+# QA Team Sign-Off
+
+**Test Lead:** Khani
+
+## Submitted: 2/13/
+
+## Team Members:
+
+## Khani
+
 Quint
-## Appendix: Detailed Test Scenarios
-### Scenario 1: [Happy Path]
-- Result: [Passed / Failed / Partial]
+Nayan
+Gauhar
 
-- Notes: [What did we learn?]
 
-### Scenario 2: [Input Validation]
-- Result: [Passed / Failed / Partial]
+# Appendix: Detailed Test Scenarios
 
-- Notes:
+# Scenario 1: Beating the boss (Happy path)
 
-### Scenario 3: [Edge Cases]
-- Result: [Passed / Failed / Partial]
+## Result: Passed
 
-- Notes:
+**Notes:** You can win the game, but the End Screen is not visible on the default zoom.
 
-## Questions for Dev Team (If Applicable)
-### If there were ambiguities in how the game should work, note them here so dev team can clarify in Week 7:
+# Scenario 2: Input Validation
 
-- [Question about mechanic X]
-- [Unclear behavior in feature Y]
-End of Report
+## Result: Partial
+
+**Notes: Quit key non-existent, upgrade, reset, and escape buttons good**
+
+# Scenario 3: Edge Case
+
+## Result: Failed
+
+**Notes: Game doesn’t end when pickles reach the bottom of the screen. Boss hitbox**
+
+## inaccurate.
+
+# Questions for Dev Team (If Applicable)
+
+If there were ambiguities in how the game should work, note them here so dev team can clarify
+
+## in Week 7:
+
+- The README mentioned the player being able to move up, down, left and right. Was this
+    supposed to be implemented in the game?
+
+## End of Report
+
