@@ -118,7 +118,7 @@ High
 - Fix [Issue X] — affects [feature]
 - Fix [Issue Y] — prevents [win/lose condition]
 ## Important Fixes (Priority 2)
--Improve input validation in [feature]
+- Improve input validation in [feature]
 - Fix state tracking in [feature]
 ## Polish/Optional Fixes (Priority 3)
 - [Cosmetic improvements]
