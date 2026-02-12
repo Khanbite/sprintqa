@@ -10,7 +10,7 @@ Testing Period: Week 6 (Tue–Fri)
 Report Date: 2/13/26
 
 Executive Summary
-We conducted comprehensive QA testing on [Game Name] over 4 days. Our team tested [X core features], ran [Y test scenarios], and filed [Z GitHub Issues] documenting bugs across all severity levels.
+We conducted comprehensive QA testing on Tickle the Pickle over 4 days. Our team tested [X core features], ran [Y test scenarios], and filed [Z GitHub Issues] documenting bugs across all severity levels.
 
 Key Finding: [One sentence summary — e.g., "The core game loop works, but input validation needs attention."]
 
@@ -22,11 +22,11 @@ Key Finding: [One sentence summary — e.g., "The core game loop works, but inpu
 - State management ✓
 - Complex scenarios & sequences ✓
 ### Coverage Summary
-#### Features Tested: [List core features and % coverage]
+#### Features Tested: 
 - Feature 1: 100% tested
 - Feature 2: 80% tested
 - Feature 3: Not tested (reason)
-#### Test Types: [Types of testing we did]
+#### Test Types:
 - Functional testing (does it work?)
 - Negative testing (what breaks it?)
 - Boundary testing (edge values)
@@ -49,7 +49,7 @@ Other: [#] bugs
 ## Critical Issues (Must Fix Before Handoff)
 #### These bugs prevent the game from being playable or break core mechanics.
 
-1
+Issue 1
 
 [Title]
 
@@ -59,7 +59,7 @@ Critical
 
 [Link]
 
-2
+Issue 2
 
 [Title]
 
@@ -72,15 +72,7 @@ Critical
 High-Priority Issues (Fix ASAP)
 These bugs affect core features but don't prevent gameplay.
 
-#
-
-Title
-
-Severity
-
-GitHub Issue
-
-1
+Bug Level 1
 
 [Title]
 
@@ -88,7 +80,7 @@ High
 
 [Link]
 
-2
+Bug Level 2
 
 [Title]
 
@@ -96,7 +88,7 @@ High
 
 [Link]
 
-3
+Bug Level 3
 
 [Title]
 
@@ -130,7 +122,7 @@ High
 - [Cosmetic improvements]
 - [Nice-to-have enhancements]
 ## Test Environment
-- Platform: [Python terminal / Replit / Codespaces]
+- Platform: Python terminal
 
 - Game Version: [Commit hash or date]
 
@@ -159,10 +151,10 @@ High
 
 #### Team Members:
 
-[Name]
-[Name]
-[Name]
-[Name]
+Nayan
+Khnai
+Gauhar
+Quint
 ## Appendix: Detailed Test Scenarios
 ### Scenario 1: [Happy Path]
 - Result: [Passed / Failed / Partial]
